@@ -14,3 +14,4 @@
 10. Which author had the most books checked out (and returned) in Feb 2017?
 
 #### What I Learned
+![alt Text](https://github.com/GauriBansal/Arkansas-Coding-Academy-Course-Material/blob/master/08%20-%20BookWorm%20Library%20Database/BookWorm%20Database%20Diagram.png "DB Diagram")
