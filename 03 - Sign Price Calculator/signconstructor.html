@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link href="css/sign.css" rel="stylesheet" />
+
+    <title>Sign Price by Constructor object</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="card pt-3 col bg-light border-success text-center">
+                <img class="card-img-top" src="http://www.bansalgroup.co/images/Bansal.png" alt="Bansal Group logo" />
+                <div class="card-body p-5">
+                    <h3 id="id1">Enter your Sign below</h3>
+                    <input type="text" id="input1" />
+                    <button id="btn" class="btn btn-success m-3" onclick="signPrice()">Get the price</button>
+                    <p class="display-5">
+                        <strong>
+                            <em>Price of the Sign:</em>
+                        </strong>
+                        <scan id="totalPrice" class="display-4 m-4"></scan>
+                        <br>
+                        <small>Price of Words : </small>
+                        <scan id="wordsPrice">$0.00</scan>
+                        <br>
+                        <small>Price of Letters : </small>
+                        <scan id="letterPrice">$0.00</scan>
+                    </p>
+                </div>
+                <div class="card-footer row text-muted text-left">
+                    <small class="col-12 col-sm-2 text-left">Standard Price guidelines: </small>
+                    <small class="col-12 col-sm-5">$2 for first Word and $.75 for every subsequent words
+                        <br>$.50 per vowels and $1 for consonants </small>
+                    <small class="col-12 col-sm-5 text-center text-sm-right p-2"> <span>Contact us at :</span>
+                        <a href="mailto:bansalgroup@gmail.com?Subject=Hello%20again" target="_top">bansalgroup@gmail.com</a>
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function signPrice() {
+
+            var noOfLetters = 0;
+            var noOfWords = 0;
+            var constructorText = '';
+
+            //get the text area data and put them in an Array without spaces
+            var inputText = document.getElementById("input1");
+
+            //make sure user entered text
+            if (inputText.value.trim() == '' || inputText.value == null) {
+                alert('Please enter some words!');
+                return;
+            }
+            //call the constructor object with text area as parameters and capture totalprice returned
+            var bansalSign = new constructorSign(noOfWords, noOfLetters, inputText);
+            var allPrices = bansalSign.price();
+            bansalSign.noOfWords = allPrices[0];
+            bansalSign.noOfLetters = allPrices[1];
+
+            //write the total price, word price and letter price on their respective HTML element
+            var signTotal = document.getElementById("totalPrice");
+            signTotal.textContent = '$' + allPrices[2];
+            var signWordTotal = document.getElementById("wordsPrice");
+            signWordTotal.textContent = '$' + allPrices[3];
+            var signLetterTotal = document.getElementById("letterPrice");
+            signLetterTotal.textContent = '$' + allPrices[4];
+
+            // make the Sign object by constructor
+            function constructorSign(noOfWords, noOfLetters, inputText) {
+                this.noOfWords = noOfWords;
+                this.noOfLetters = noOfLetters;
+                this.constructorText = inputText.value;
+                this.price = function () {
+                    //define all the varibles here
+                    var noOfVowels = 0;
+                    var noOfConsonants = 0;
+                    var temporaryChar = '';
+                    var letterPrice = 0, wordsPrice = 0, vowelsPrice = 0, consonantsPrice = 0, totalPrice = 0;
+
+                    //get the value of HTML element
+                    var words = inputText.value.trim().split(' ');
+
+                    //get the number of words and number of letter 
+                    //special characters are accepted as letters
+                    for (var i = 0; i < words.length; i++) {
+                        if (words[i] != '') {
+                            noOfLetters += words[i].length;
+                            noOfWords += 1;
+                            //read each array element for every letter
+                            //check for vowels and consonants and increment their respective counter
+                            //check for vowels in Capital letter as well because JS is case sensitive
+                            //special characters are charged as per consonants prize
+                            for (var j = 0; j < words[i].length; j++) {
+                                temporaryChar = words[i].charAt(j);
+                                if ((temporaryChar == 'a') || (temporaryChar == 'e') ||
+                                    (temporaryChar == 'i') || (temporaryChar == 'o') ||
+                                    (temporaryChar == 'u') || (temporaryChar == 'A') ||
+                                    (temporaryChar == 'E') || (temporaryChar == 'I') ||
+                                    (temporaryChar == 'O') || (temporaryChar == 'U')) {
+                                    noOfVowels += 1;
+                                }
+                                else {
+                                    noOfConsonants += 1;
+                                }
+                            }
+                        }
+                    }
+
+                    //calculate the price by words, letters, vowels, consonants
+                    wordsPrice = 2 + ((noOfWords - 1) * 0.75);
+                    vowelsPrice = noOfVowels * 0.50;
+                    consonantsPrice = noOfConsonants * 1;
+                    letterPrice = vowelsPrice + consonantsPrice;
+                    totalPrice = wordsPrice + letterPrice;
+                    // console.log('no of Letters : ' + noOfLetters);
+                    // console.log('no of Words : ' + noOfWords);
+                    // console.log('no of Vowels : ' + noOfVowels);
+                    // console.log('no of Consonants : ' + noOfConsonants);
+                    // console.log('word price : ' + wordsPrice);
+                    // console.log('Vowels price : ' + vowelsPrice);
+                    // console.log('Consonants price : ' + consonantsPrice);
+                    return [noOfWords, noOfLetters, totalPrice, wordsPrice, letterPrice];
+                };
+            }
+        }
+    </script>
+</body>
+
+</html>
