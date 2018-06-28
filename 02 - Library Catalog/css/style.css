@@ -1,0 +1,38 @@
+    /* The animation code */
+@keyframes bg-animate {
+    0%   { left:0px; top:0px;}
+    10%  { left:0px; top:-25px;}
+    20%  { left:0px; top:-50px;}
+    30%  { left:0px; top:-75px;}
+    40%  { left:0px; top:-100px;}
+    50%  { left:0px; top:-125px;}
+    60%  { left:0px; top:-100px;}
+    70%  { left:0px; top:-75px;}
+    80%  { left:0px; top:-50px;}
+    90%  { left:0px; top:-25px;}
+    100% { left:0px; top:0px;}
+}
+.bg-container{
+    overflow: hidden;
+    min-height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+.scrolling-bg{
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 2400px;
+    background-image: url("http://d2luqot5fuic24.cloudfront.net/assets/img/Background_NoBlur.jpg");
+    background-size: auto 800px;
+    background-repeat: repeat;
+    /* The element to apply the animation to */
+    animation-name: bg-animate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    }
+.text-shadow{
+    text-shadow: 5px 5px 10px rgb(2, 240, 248);
+}    

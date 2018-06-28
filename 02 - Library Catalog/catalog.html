@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" >
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>The Bookworm Library</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="./index.html"><i class="fas fa-book"></i> Bookworm</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./catalog.html">Catalog</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Catalog</li>
+        </ol>
+    </nav> 
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-6 text-left">
+                <a href="./create.html" class="btn btn-success"><i class="fas fa-plus"></i> Add a new book</a>
+            </div>
+            <form class="col-5 m-0 p-0">
+                <input type="text" class="form-control" placeholder="Search by BookName/Author">
+            </form>   
+            <div class="col-1 p-0">
+                <a href="./catalog.html" class="btn btn-success"><i class="fas fa-search"></i></a>
+            </div>    
+        </div>    
+
+        <div class="row mt-4">
+            <div class="col-12">    
+               <table class="table table-bordered table-hover table-sm">
+                    <caption>List of books</caption>
+                    <thead class="table-dark text-center">
+                        <tr>
+                            <th scope="col">BookName</th>                    
+                            <th scope="col">Author</th>
+                            <th scope="col">Genre</th>
+                            <th scope="col">ISBN</th>
+                            <th scope="col">Publisher</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <a href="./details.html">Angels and Demons</a>
+                            </td>
+                            <td>Dan Brown</td>
+                            <td>mystery-thriller</td>
+                            <td>0-671-02735-2</td>
+                            <td> Pocket Books </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="./details.html">The Da Vinci Code</a>
+                            </td>
+                            <td>Dan Brown</td>
+                            <td>mystery-thriller</td>
+                            <td>0-385-50420-9 </td>
+                            <td>Doubleday</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="./details.html">Twilight</a>
+                            </td>
+                            <td>Stephenie Meyer</td>
+                            <td> fantasy, romance, vampire</td>
+                            <td>0-316-16017-2</td>
+                            <td>Little, Brown and Company</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="./details.html">The Notebook</a>
+                            </td>
+                            <td> Nicholas Sparks</td>
+                            <td> romance</td>
+                            <td>0-446-52080-2</td>
+                            <td>Warner Books</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="./details.html">Pride and Prejudice</a>
+                            </td>
+                            <td> Jane Austen</td>
+                            <td> Fiction</td>
+                            <td>8-826-40480-1</td>
+                            <td>T. Egerton, Whitehall</td>
+                        </tr>
+                    </tbody>
+               </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
