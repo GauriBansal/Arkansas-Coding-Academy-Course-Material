@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TicTacToeDotNet.Core</name>
+    </assembly>
+    <members>
+        <member name="M:TicTacToeDotNet.Core.IPlayer.SayHello">
+            <summary>
+            The name of your Tic-Tac-Toe Player
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TicTacToeDotNet.Core.IPlayer.DeterminePlay(TicTacToeDotNet.Core.Enums.TicTac,TicTacToeDotNet.Core.Models.Board)">
+            <summary>
+            Determine what Position to play on the Tic-Tac-Toe board
+            </summary>
+            <param name="yourTicTac">The Tic-Tac value your player is currently using (X or O)</param>
+            <param name="board">A reference to the current Tic-Tac-Toe board</param>
+            <returns></returns>
+        </member>
+        <member name="P:TicTacToeDotNet.Core.Models.Board.Squares">
+            <summary>
+            The 9 squares on the Tic-Tac-Toe board
+            </summary>
+        </member>
+        <member name="P:TicTacToeDotNet.Core.Models.Board.CurrentStatus">
+            <summary>
+            The current status of the Tic-Tac-Toe board during play or upon completion
+            </summary>
+        </member>
+        <member name="P:TicTacToeDotNet.Core.Models.Board.HasPlays">
+            <summary>
+            Indicates whether or not there are any available squares remaining on the Tic-Tac-Toe board
+            </summary>
+        </member>
+        <member name="P:TicTacToeDotNet.Core.Models.Board.AvailableSquares">
+            <summary>
+            The currently available squares on the Tic-Tac-Toe board
+            </summary>
+        </member>
+        <member name="P:TicTacToeDotNet.Core.Models.Board.OccupiedSquares">
+            <summary>
+            The squares that have been played with an X or an O on the Tic-Tac-Toe board
+            </summary>
+        </member>
+        <member name="P:TicTacToeDotNet.Core.Models.Board.RandomSquare">
+            <summary>
+            A random square that is available for play on the Tic-Tac-Toe board
+            </summary>
+        </member>
+        <member name="P:TicTacToeDotNet.Core.Models.Board.CenterSquare">
+            <summary>
+            The square in the middle of the Tic-Tac-Toe board
+            </summary>
+        </member>
+        <member name="P:TicTacToeDotNet.Core.Models.Board.IsCenterSquareAvailable">
+            <summary>
+            A boolean that indicates whether or not the center square is available
+            </summary>
+        </member>
+        <member name="P:TicTacToeDotNet.Core.Models.Board.CornerSquares">
+            <summary>
+            The squares in the 4 corners of the Tic-Tac-Toe board
+            </summary>
+        </member>
+        <member name="P:TicTacToeDotNet.Core.Models.Board.MiddleSquares">
+            <summary>
+            The squares in the middle of the outside edge of the Tic-Tac-Toe board
+            </summary>
+        </member>
+        <member name="P:TicTacToeDotNet.Core.Models.Board.LeftToRightDiag">
+            <summary>
+            The squares that span from the top-left corner to the bottom-right corner of the Tic-Tac-Toe board
+            </summary>
+        </member>
+        <member name="P:TicTacToeDotNet.Core.Models.Board.RightToLeftDiag">
+            <summary>
+            The squares that span from the top-right corner to the bottom-left corner of the Tic-Tac-Toe board
+            </summary>
+        </member>
+        <member name="M:TicTacToeDotNet.Core.Models.Board.Row(System.Int32)">
+            <summary>
+            Gets the squares that exist in the requested row of the Tic-Tac-Toe board
+            </summary>
+            <param name="id">The 1-based row indicator</param>
+            <returns></returns>
+        </member>
+        <member name="M:TicTacToeDotNet.Core.Models.Board.Col(System.Int32)">
+            <summary>
+            Gets the squares that exist in the requested column of the Tic-Tac-Toe board
+            </summary>
+            <param name="id">The 1-based column indicator</param>
+            <returns></returns>
+        </member>
+        <member name="M:TicTacToeDotNet.Core.Models.Board.Get(System.Int32,System.Int32)">
+            <summary>
+            Gets the square that exists in the requested x,y coordinates of the Tic-Tac-Toe board
+            </summary>
+            <param name="x">The 0-based x-position</param>
+            <param name="y">The 0-based y-position</param>
+            <returns></returns>
+        </member>
+        <member name="M:TicTacToeDotNet.Core.Models.Board.Build">
+            <summary>
+            Setup the squares on the Tic-Tac-Toe board
+            </summary>
+        </member>
+        <member name="M:TicTacToeDotNet.Core.Models.Board.IsWinner">
+            <summary>
+            Determine whether or not X or O has 3 squares in a row on the Tic-Tac-Toe board 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TicTacToeDotNet.Core.Models.Board.MakePlay(TicTacToeDotNet.Core.Enums.TicTac,System.Int32)">
+            <summary>
+            Make a play on the Tic-Tac-Toe board
+            </summary>
+            <param name="play">The value to play (X or O)</param>
+            <param name="positionId">The 1-based friendly position Id of the Square to play</param>
+            <returns>A boolean indicating whether or not the play is valid</returns>
+        </member>
+        <member name="M:TicTacToeDotNet.Core.Models.Board.ToString">
+            <summary>
+            Print out the Tic-Tac-Toe board with all plays
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:TicTacToeDotNet.Core.Models.Position.Id">
+            <summary>
+            Starting at 1, the friendly number of the square within the board going left-to-right, top-to-bottom
+            </summary>
+        </member>
+        <member name="P:TicTacToeDotNet.Core.Models.Position.XPosition">
+            <summary>
+            The x position in the board (0-based)
+            </summary>
+        </member>
+        <member name="P:TicTacToeDotNet.Core.Models.Position.YPosition">
+            <summary>
+            The y position in the board (0-based)
+            </summary>
+        </member>
+        <member name="P:TicTacToeDotNet.Core.Models.Square.TicTac">
+            <summary>
+            The current value of the Square on the Tic-Tac-Toe board
+            </summary>
+        </member>
+        <member name="P:TicTacToeDotNet.Core.Models.Square.Position">
+            <summary>
+            The Position of the Square on the Tic-Tac-Toe board
+            </summary>
+        </member>
+        <member name="P:TicTacToeDotNet.Core.Models.Square.Row">
+            <summary>
+            The 1-based row of the Square that resides on the Tic-Tac-Toe board 
+            </summary>
+        </member>
+        <member name="P:TicTacToeDotNet.Core.Models.Square.Column">
+            <summary>
+            The 1-based column of the Square that resides on the Tic-Tac-Toe board 
+            </summary>
+        </member>
+        <member name="M:TicTacToeDotNet.Core.Models.Square.HasTicOrTac">
+            <summary>
+            Indicates whether or note the Square is currently available or occupied
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TicTacToeDotNet.Core.Models.Square.ToString">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
